@@ -16,7 +16,7 @@ class RefreshTokenUserUseCase {
 
         // Se refreshToken existir iremos gerar um novo token
         const generateTokenProvider = new GenerateTokenProvider();
-        const token = generateTokenProvider.execute(refreshToken.userId);
+        const token = await generateTokenProvider.execute(refreshToken.userId);
 
 
         return { token };
